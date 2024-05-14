@@ -22,7 +22,7 @@
 <body>
     <div id="container">
         <!-- Add your GLB 3D model here -->
-        <model-viewer id="model" src="C:\Users\mrtho\Downloads\TakeOutBoxV2.glb" alt="A 3D model" camera-controls autoplay autoplay-delay="1000" rotation-per-second="10"></model-viewer>
+        <model-viewer id="model" src="https://github.com/dktrn9ne/ghetto-haiku/blob/main/TakeOutBoxV2.glb" alt="A 3D model" camera-controls autoplay autoplay-delay="1000" rotation-per-second="10"></model-viewer>
     </div>
 
     <!-- Add scripts for model viewer -->
