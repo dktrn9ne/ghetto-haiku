@@ -22,7 +22,7 @@
 <body>
     <div id="container">
         <!-- Add your GLB 3D model here -->
-        <model-viewer id="model" src="TakeOutBoxV2.gltf" alt="A 3D model" camera-controls autoplay autoplay-delay="1000" rotation-per-second="10"></model-viewer>
+        <model-viewer id="model" src="TakeOutBoxV2.glb" alt="A 3D model" camera-controls autoplay autoplay-delay="1000" rotation-per-second="10"></model-viewer>
     </div>
 
     <!-- Add scripts for model viewer -->
