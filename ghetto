@@ -3,29 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Model Rotation</title>
-    <style>
-        /* Add CSS styles here */
-        #container {
-            width: 100%;
-            height: 400px; /* Adjust height as needed */
-            margin: 0 auto;
-            position: relative;
-        }
-
-        #model {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+    <title>3D Model with Video Background</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="container">
-        <!-- Add your GLB 3D model here -->
-        <model-viewer id="model" src="TakeOutBoxV2.gltf" alt="A 3D model" camera-controls autoplay autoplay-delay="1000" rotation-per-second="10"></model-viewer>
+    <div id="video-container">
+        <video id="background-video" autoplay loop muted>
+            <source src="tokyogh.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div id="model-container">
+            <model-viewer id="model" src="TakeOutBoxV2.glb" alt="A 3D model" camera-controls autoplay autoplay-delay="1000" rotation-per-second="10"></model-viewer>
+        </div>
     </div>
 
-    <!-- Add scripts for model viewer -->
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
