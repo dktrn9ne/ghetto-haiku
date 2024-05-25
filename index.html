@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghetto Haiku™</title>
+    <title>3D Model with Video Background and Song</title>
     <style>
-        /* Add CSS styles here */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
+            overflow: hidden;
         }
 
         #background-video {
@@ -45,23 +45,24 @@
     </style>
 </head>
 <body>
-    <audio autoplay loop>
-        <source src="2.shibuyafreestyle.wav" type="audio/wav">
+    <audio id="bg-music" autoplay loop>
+        <source src="2.shibuyafreestyle" type="audio/wav">
         <!-- Add additional source elements for different formats if necessary -->
     </audio>
 
     <video id="background-video" autoplay loop muted playsinline>
         <source src="tokyogh.mp4" type="video/mp4">
+        <!-- Add additional source elements for different video formats if necessary -->
     </video>
 
     <div id="container">
-        <!-- Add your GLB 3D model here -->
         <div id="model-container">
             <model-viewer id="model" src="TakeOutBoxV2.glb" alt="A 3D model" camera-controls autoplay autoplay-delay="1000"></model-viewer>
         </div>
     </div>
 
-    <!-- Add scripts for model viewer -->
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer"></script>
+    <script type="module">
+        // You can add JavaScript code here if needed
+    </script>
 </body>
 </html>
