@@ -10,6 +10,7 @@
             margin: 0;
             padding: 0;
             height: 100%;
+            overflow: hidden;
         }
 
         #background-video {
@@ -30,12 +31,13 @@
 
         #model-container {
             position: absolute;
-            top: 50%;
+            top: 50px; /* Adjust top position as needed */
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
             width: 60%;
             max-width: 800px;
             height: auto;
+            text-align: center;
         }
 
         #model {
@@ -51,7 +53,9 @@
 
     <div id="container">
         <!-- Add your GLB 3D model here -->
-        <model-viewer id="model" src="TakeOutBoxV2.glb" alt="A 3D model" camera-controls autoplay autoplay-delay="1000" rotation-per-second="10"></model-viewer>
+        <div id="model-container">
+            <model-viewer id="model" src="TakeOutBoxV2.glb" alt="A 3D model" camera-controls autoplay autoplay-delay="1000" rotation-per-second="10"></model-viewer>
+        </div>
     </div>
 
     <!-- Add scripts for model viewer -->
