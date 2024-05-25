@@ -10,6 +10,7 @@
             margin: 0;
             padding: 0;
             height: 100%;
+            overflow: hidden; /* Added to prevent scrollbars */
         }
 
         #background-video {
@@ -36,6 +37,7 @@
             width: 60%;
             max-width: 800px;
             height: auto;
+            z-index: 0; /* Set z-index to ensure the model is below the image */
         }
 
         #model {
@@ -45,12 +47,12 @@
 
         #image-below-model {
             position: absolute;
-            top: 60%; /* Adjust this value according to your preference */
+            top: 70%; /* Adjust this value according to your preference */
             left: 50%;
             transform: translate(-50%, -50%);
             max-width: 80%; /* Adjust the width of the image */
             height: auto;
-            z-index: 1; /* Ensure the image is below the model */
+            z-index: 1; /* Ensure the image is above the model */
         }
     </style>
 </head>
@@ -66,10 +68,12 @@
 
     <div id="container">
         <!-- Add your GLB 3D model here -->
-        <model-viewer id="model" src="TakeOutBoxV2.glb" alt="A 3D model" camera-controls autoplay autoplay-delay="1000" rotation-per-second="10"></model-viewer>
+        <div id="model-container">
+            <model-viewer id="model" src="TakeOutBoxV2.glb" alt="A 3D model" camera-controls autoplay autoplay-delay="1000" rotation-per-second="10"></model-viewer>
+        </div>
         
         <!-- Add the PNG image below the model -->
-        <img id="image-below-model" src="3000.png" alt="Description of your image">
+        <img id="image-below-model" src="your_image.png" alt="Description of your image">
     </div>
 
     <!-- Add scripts for model viewer -->
