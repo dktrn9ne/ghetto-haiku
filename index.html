@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Background with Looping GIF</title>
+    <title>Video Background with Looping GIF and Audio Button</title>
     <style>
         body, html {
             margin: 0;
@@ -28,6 +28,20 @@
             left: 20px; /* Adjust left position as needed */
             z-index: 1; /* Ensure the looping gif is above the background */
         }
+
+        #audio-button {
+            position: fixed;
+            top: calc(20px + 200px); /* Adjust top position as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 2; /* Ensure the button is above the looping gif */
+        }
     </style>
 </head>
 <body>
@@ -39,5 +53,21 @@
 
     <!-- Looping GIF -->
     <img id="looping-gif" src="9loop.gif" alt="Looping GIF">
+
+    <!-- Audio button -->
+    <button id="audio-button" onclick="playAudio()">Press Play</button>
+
+    <!-- Audio element -->
+    <audio id="audio">
+        <source src="2.shibuyafreestyle.wav" type="audio/wav">
+        <!-- Add additional source elements for different audio formats if necessary -->
+    </audio>
+
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("audio");
+            audio.play();
+        }
+    </script>
 </body>
 </html>
