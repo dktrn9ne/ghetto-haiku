@@ -5,42 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Background with Looping GIF and Audio Button</title>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
+        $background-gray: #e0e5ec;
+        $gray: #7e8a98;
+        $dark-gray: darken(#7e8a98, 10%);
+        $red: #e22d49;
+        $track: #3fbbe9;
+
+        @mixin reverse-neu {
+          box-shadow: inset -5px -5px 15px 0px #ffffff9e,
+            inset 5px 5px 15px 0px #a3b1c6a8;
         }
 
-        #background-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
+        body {
+          padding: 0;
+          margin: 0;
+          background: $background-gray;
+          font-family: "Roboto", sans-serif;
         }
 
-        #looping-gif {
-            position: fixed;
-            top: 20px; /* Adjust top position as needed */
-            left: 20px; /* Adjust left position as needed */
-            z-index: 1; /* Ensure the looping gif is above the background */
+        .container {
+          width: 100vw;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
 
-        #audio-button {
-            position: fixed;
-            top: calc(20px + 200px); /* Adjust top position as needed */
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
+        .iphone {
+          width: 312px;
+          height: 612px;
+          background: $background-gray;
+          border-radius: 2em;
+          box-sizing: border-box;
+          padding: 2em;
+          display: flex;
+          flex-direction: column;
+          .title {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 0.75em;
+            margin-bottom: 2em;
+          }
+          .album-cover {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            .album-overlay {
+              background: #fff;
+              width: 248px;
+              height: 248px;
+              z-index: 2;
+              border-radius: 15px;
+              position: absolute;
+              opacity: 0.35;
+              -webkit-clip-path: ellipse(61% 64% at 82% 56%);
+              clip-path: ellipse(61% 64% at 82% 56%);
+            }
+            img {
+              width: 100%;
+              border-radius: 15px;
+            }
+            .song-title {
+              text-align: center;
+              padding-bottom: 0;
+              margin-bottom: 0;
+              color: $dark-gray;
+            }
+            .artist-title {
+              text-align: center;
+              padding: 1em 0;
+              margin: 0;
+              font-size: 0.85em;
+              color: $dark-gray;
+            }
+          }
+
+          .track {
+            margin-top: 1em;
+            height: 10px;
+            div {
+              width: 42%;
+              height: 100%;
+              background: $gray;
+              opacity: 0.75;
+              border-radius: 15px;
+            }
+          }
+
+          .buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 1em 0;
+          }
+
+          .lyrics {
+            color: $gray;
+            margin-top: 2em;
+            text-align: center;
+            font-size: 0.75em;
+            display: flex;
+            flex-direction: column;
+          }
+        }
+
+        .neu {
+          box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
+          background: $background-gray;
+          border-radius: 2em;
+          border: 0;
+        }
+
+        .btn {
+          padding: 15px;
+          border-radius: 30px;
+          color: $gray;
+          outline: none;
+          cursor: pointer;
+          &.lg {
+            font-size: 1em;
+          }
+          &:active {
             cursor: pointer;
-            z-index: 2; /* Ensure the button is above the looping gif */
+            @include reverse-neu;
+          }
+        }
+
+        .red {
+          color: $red;
         }
     </style>
 </head>
@@ -63,11 +156,35 @@
         <!-- Add additional source elements for different audio formats if necessary -->
     </audio>
 
-    <script>
-        function playAudio() {
-            var audio = document.getElementById("audio");
-            audio.play();
-        }
-    </script>
-</body>
-</html>
+    <!-- Music player -->
+    <div class="container">
+        <div class="iphone neu">
+            <div class="title">
+                <div><i class="fas fa-chevron-left"></i></div>
+                <div>NOW PLAYING</div>
+                <div><i class="fas fa-ellipsis-v"></i></div>
+            </div>
+            <div class="album-cover">
+                <div class="album-overlay"></div>
+                <img src="https://github.com/dktrn9ne/ghetto-haiku/blob/index.html/phonto.jpeg" alt="">
+                <h2 class="song-title">
+                    Shibuya Freestyle
+                </h2>
+                <h3 class="artist-title">
+                    DKTR N9NE
+                </h3>
+            </div>
+            <div class="buttons">
+                <button class="btn lg red neu"><i class="fas fa-heart"></i></button>
+                <button class="btn lg neu"><i class="fas fa-backward"></i></button>
+                <button class="btn lg neu"><i class="fas fa-play"></i></button>
+                <button class="btn lg neu"><i class="fas fa-forward"></i></button>
+            </div>
+            <div class="track neu">
+                <div></div>
+            </div>
+            <div class="lyrics">
+                <i class="fas fa-angle-up"></i>
+                <span>LYRICS</span>
+            </div>
+       
