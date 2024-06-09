@@ -35,6 +35,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 2; /* Ensure the center gif is above the background */
+            transition: transform 0.1s linear;
         }
 
         #audio-button {
@@ -63,7 +64,7 @@
     <img id="looping-gif" src="9loop.gif" alt="Looping GIF">
 
     <!-- Looping GIF in the center -->
-    <img id="center-gif" src="shirt.gif" alt="Center Looping GIF">
+    <img id="center-gif" src="center-loop.gif" alt="Center Looping GIF">
 
     <!-- Audio button -->
     <button id="audio-button" onclick="playAudio()">Press Play</button>
@@ -88,11 +89,13 @@
         // Rotate the GIF based on mouse movement
         document.addEventListener('mousemove', (event) => {
             const centerGif = document.getElementById('center-gif');
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
             const rect = centerGif.getBoundingClientRect();
             const centerX = rect.left + rect.width / 2;
             const centerY = rect.top + rect.height / 2;
-            const deltaX = event.clientX - centerX;
-            const deltaY = event.clientY - centerY;
+            const deltaX = mouseX - centerX;
+            const deltaY = mouseY - centerY;
             const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
             centerGif.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
         });
