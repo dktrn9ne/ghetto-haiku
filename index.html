@@ -63,10 +63,21 @@
         <!-- Add additional source elements for different audio formats if necessary -->
     </audio>
 
+    <!-- Include the external player script -->
+    <script src="https://cdn.jsdelivr.net/gh/ssebastianoo/web-player@main/player.js"></script>
     <script>
+        const player = new WebPlayer({
+            songs: [
+                {
+                    title: 'Shibuya Freestyle',
+                    src: '2.shibuyafreestyle.wav', // Update to the currently playing song
+                }
+            ],
+        });
+        player.setup();
+
         function playAudio() {
-            var audio = document.getElementById("audio");
-            audio.play();
+            player.play();
         }
     </script>
 </body>
