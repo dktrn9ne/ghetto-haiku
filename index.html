@@ -24,8 +24,8 @@
 
         #looping-gif {
             position: fixed;
-            top: 10px; /* Adjust top position as needed */
-            left: 10px; /* Adjust left position as needed */
+            top: 20px; /* Adjust top position as needed */
+            left: 20px; /* Adjust left position as needed */
             z-index: 1; /* Ensure the looping gif is above the background */
         }
 
@@ -42,6 +42,16 @@
             cursor: pointer;
             z-index: 2; /* Ensure the button is above the looping gif */
         }
+
+        #png-image {
+            position: fixed;
+            width: 50%; /* Adjust the size as needed */
+            height: auto; /* Maintain aspect ratio */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3; /* Ensure the image is above all other elements */
+        }
     </style>
 </head>
 <body>
@@ -54,14 +64,11 @@
     <!-- Looping GIF -->
     <img id="looping-gif" src="9loop.gif" alt="Looping GIF">
 
+    <!-- PNG Image -->
+    <img id="png-image" src="3000.png" alt="PNG Image">
+
     <!-- Audio button -->
     <button id="audio-button" onclick="playAudio()">Press Play</button>
-
-    <!-- Audio element -->
-    <audio id="audio">
-        <source src="2.shibuyafreestyle.wav" type="audio/wav">
-        <!-- Add additional source elements for different audio formats if necessary -->
-    </audio>
 
     <!-- Include the external player script -->
     <script src="https://cdn.jsdelivr.net/gh/ssebastianoo/web-player@main/player.js"></script>
@@ -69,8 +76,8 @@
         const player = new WebPlayer({
             songs: [
                 {
-                    title: 'N9ne vibes',
-                    src: 'sammydavisjr.mp3', // Update to the currently playing song
+                    title: 'Shibuya Freestyle',
+                    src: '2.shibuyafreestyle.wav', // Update to the currently playing song
                 }
             ],
         });
