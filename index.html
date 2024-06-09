@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghetto Haiku by Dktr N9ne</title>
+    <title>Ghetto Haiku By DKTR N9NE</title>
     <style>
         body, html {
             margin: 0;
@@ -27,6 +27,7 @@
             top: 10px; /* Adjust top position as needed */
             left: 10px; /* Adjust left position as needed */
             z-index: 1; /* Ensure the looping gif is above the background */
+            animation: spin 10s linear infinite; /* Slow down the spinning rate */
         }
 
         #center-gif {
@@ -37,6 +38,7 @@
             width: 300px; /* Adjust size as needed */
             height: 300px; /* Adjust size as needed */
             z-index: 2; /* Ensure the center gif is above the background */
+            animation: spin 10s linear infinite; /* Slow down the spinning rate */
         }
 
         #side-gif {
@@ -47,6 +49,7 @@
             width: 450px; /* Adjust size as needed */
             height: 450px; /* Adjust size as needed */
             z-index: 2; /* Ensure the side gif is above the background */
+            animation: spin 10s linear infinite; /* Slow down the spinning rate */
         }
 
         #audio-button {
@@ -61,6 +64,11 @@
             border-radius: 5px;
             cursor: pointer;
             z-index: 2; /* Ensure the button is above the looping gif */
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
