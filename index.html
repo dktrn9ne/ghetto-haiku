@@ -84,6 +84,18 @@
         function playAudio() {
             player.play();
         }
+
+        // Rotate the GIF based on mouse movement
+        document.addEventListener('mousemove', (event) => {
+            const centerGif = document.getElementById('center-gif');
+            const rect = centerGif.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const deltaX = event.clientX - centerX;
+            const deltaY = event.clientY - centerY;
+            const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+            centerGif.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+        });
     </script>
 </body>
 </html>
