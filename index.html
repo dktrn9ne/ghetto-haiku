@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghetto Haiku by Dktr N9ne in association with Library Labs</title>
+    <title>Ghetto Haiku by Dktr N9ne</title>
     <style>
         body, html {
             margin: 0;
@@ -32,11 +32,21 @@
         #center-gif {
             position: fixed;
             top: 50%;
-            left: 50%;
+            left: 45%; /* Adjust left position as needed */
             transform: translate(-50%, -50%);
             width: 300px; /* Adjust size as needed */
             height: 300px; /* Adjust size as needed */
             z-index: 2; /* Ensure the center gif is above the background */
+        }
+
+        #side-gif {
+            position: fixed;
+            top: 50%;
+            left: 55%; /* Adjust left position as needed */
+            transform: translate(-50%, -50%);
+            width: 300px; /* Adjust size as needed */
+            height: 300px; /* Adjust size as needed */
+            z-index: 2; /* Ensure the side gif is above the background */
         }
 
         #audio-button {
@@ -64,8 +74,11 @@
     <!-- Looping GIF in the top-left corner -->
     <img id="looping-gif" src="9loop.gif" alt="Looping GIF">
 
-    <!-- Looping GIF in the center -->
+    <!-- Centered Looping GIF -->
     <img id="center-gif" src="shirt.gif" alt="Center Looping GIF">
+
+    <!-- Side Looping GIF -->
+    <img id="side-gif" src="cd.gif" alt="Side Looping GIF">
 
     <!-- Audio button -->
     <button id="audio-button" onclick="playAudio()">Press Play</button>
