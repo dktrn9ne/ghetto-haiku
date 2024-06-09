@@ -29,6 +29,14 @@
             z-index: 1; /* Ensure the looping gif is above the background */
         }
 
+        #center-gif {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2; /* Ensure the center gif is above the background */
+        }
+
         #audio-button {
             position: fixed;
             top: calc(20px + 200px); /* Adjust top position as needed */
@@ -42,16 +50,6 @@
             cursor: pointer;
             z-index: 2; /* Ensure the button is above the looping gif */
         }
-
-        #png-image {
-            position: fixed;
-            width: 50%; /* Adjust the size as needed */
-            height: auto; /* Maintain aspect ratio */
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 3; /* Ensure the image is above all other elements */
-        }
     </style>
 </head>
 <body>
@@ -61,11 +59,11 @@
         <!-- Add additional source elements for different video formats if necessary -->
     </video>
 
-    <!-- Looping GIF -->
+    <!-- Looping GIF in the top-left corner -->
     <img id="looping-gif" src="9loop.gif" alt="Looping GIF">
 
-    <!-- PNG Image -->
-    <img id="png-image" src="3000.png" alt="PNG Image">
+    <!-- Looping GIF in the center -->
+    <img id="center-gif" src="shirt.gif" alt="Center Looping GIF">
 
     <!-- Audio button -->
     <button id="audio-button" onclick="playAudio()">Press Play</button>
