@@ -42,90 +42,6 @@
             cursor: pointer;
             z-index: 2; /* Ensure the button is above the looping gif */
         }
-
-        /* Styles for the music player */
-        .container {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            z-index: 2; /* Ensure the player is above the background and looping gif */
-        }
-
-        .iphone {
-            width: 250px;
-            height: 500px;
-            background: #f0f0f0;
-            border-radius: 35px;
-            overflow: hidden;
-            box-shadow: 20px 20px 50px #cbced1, -20px -20px 50px #ffffff;
-        }
-
-        .title {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            font-size: 20px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .album-cover {
-            position: relative;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .album-cover img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 10px solid #f0f0f0;
-        }
-
-        .song-title {
-            margin-top: 20px;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .artist-title {
-            font-size: 18px;
-            color: #777;
-        }
-
-        .buttons {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .btn {
-            width: 50px;
-            height: 50px;
-            border: none;
-            border-radius: 50%;
-            background: #f0f0f0;
-            box-shadow: 5px 5px 10px #cbced1, -5px -5px 10px #ffffff;
-            font-size: 24px;
-            color: #777;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 8px 8px 15px #cbced1, -8px -8px 15px #ffffff;
-        }
-
-        .lyrics {
-            text-align: center;
-            padding: 20px;
-            cursor: pointer;
-            font-size: 20px;
-            color: #007bff;
-            border-top: 1px solid #ddd;
-        }
     </style>
 </head>
 <body>
@@ -146,40 +62,6 @@
         <source src="2.shibuyafreestyle.wav" type="audio/wav">
         <!-- Add additional source elements for different audio formats if necessary -->
     </audio>
-
-    <!-- Music player -->
-    <div class="container">
-        <div class="iphone neu">
-            <div class="title">
-                <div><i class="fas fa-chevron-left"></i></div>
-                <div>NOW PLAYING</div>
-                <div><i class="fas fa-ellipsis-v"></i></div>
-            </div>
-            <div class="album-cover">
-                <div class="album-overlay"></div>
-                <img src="https://github.com/dktrn9ne/ghetto-haiku/blob/index.html/phonto.jpeg?raw=true">
-                <h2 class="song-title">
-                    Shibuya Freestyle
-                </h2>
-                <h3 class="artist-title">
-                    DKTR N9NE
-                </h3>
-            </div>
-            <div class="buttons">
-                <button class="btn lg red neu"><i class="fas fa-heart"></i></button>
-                <button class="btn lg neu"><i class="fas fa-backward"></i></button>
-                <button class="btn lg neu"><i class="fas fa-play"></i></button>
-                <button class="btn lg neu"><i class="fas fa-forward"></i></button>
-            </div>
-            <div class="track neu">
-                <div></div>
-            </div>
-            <div class="lyrics">
-                <i class="fas fa-angle-up"></i>
-                <span>LYRICS</span>
-            </div>
-        </div>
-    </div>
 
     <script>
         function playAudio() {
