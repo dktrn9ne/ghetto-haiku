@@ -49,6 +49,16 @@
             z-index: 2; /* Ensure the side gif is above the background */
         }
 
+        #new-side-gif {
+            position: fixed;
+            top: 50%;
+            left: 70%; /* Adjust left position as needed */
+            transform: translate(-50%, -50%);
+            width: 450px; /* Adjust size as needed */
+            height: 450px; /* Adjust size as needed */
+            z-index: 2; /* Ensure the new side gif is above the background */
+        }
+
         #audio-button {
             position: fixed;
             top: calc(20px + 200px); /* Adjust top position as needed */
@@ -79,6 +89,9 @@
 
     <!-- Side Looping GIF -->
     <img id="side-gif" src="cd.gif" alt="Side Looping GIF">
+
+    <!-- New Side Looping GIF -->
+    <img id="new-side-gif" src="mpc3009.gif" alt="New Side Looping GIF">
 
     <!-- Audio button -->
     <button id="audio-button" onclick="playAudio()">Press Play</button>
