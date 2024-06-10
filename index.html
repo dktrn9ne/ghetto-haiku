@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghetto Haiku By DKTR N9NE</title>
+    <title>Ghetto Haiku by DKTR N9NE</title>
     <style>
         body, html {
             margin: 0;
@@ -27,16 +27,18 @@
             top: 10px; /* Adjust top position as needed */
             left: 10px; /* Adjust left position as needed */
             z-index: 1; /* Ensure the looping gif is above the background */
+            animation: spin 10s linear infinite; /* Slow down the spinning rate */
         }
 
         #center-gif {
             position: fixed;
             top: 50%;
-            left: 45%; /* Adjust left position as needed */
+            left: 40%; /* Adjust left position as needed */
             transform: translate(-50%, -50%);
             width: 300px; /* Adjust size as needed */
             height: 300px; /* Adjust size as needed */
             z-index: 2; /* Ensure the center gif is above the background */
+            animation: spin 10s linear infinite; /* Slow down the spinning rate */
         }
 
         #side-gif {
@@ -47,6 +49,18 @@
             width: 450px; /* Adjust size as needed */
             height: 450px; /* Adjust size as needed */
             z-index: 2; /* Ensure the side gif is above the background */
+            animation: spin 10s linear infinite; /* Slow down the spinning rate */
+        }
+
+        #new-gif {
+            position: fixed;
+            top: 50%;
+            left: 70%; /* Adjust left position as needed */
+            transform: translate(-50%, -50%);
+            width: 300px; /* Adjust size as needed */
+            height: 300px; /* Adjust size as needed */
+            z-index: 2; /* Ensure the new gif is above the background */
+            animation: spin 10s linear infinite; /* Slow down the spinning rate */
         }
 
         #audio-button {
@@ -61,6 +75,11 @@
             border-radius: 5px;
             cursor: pointer;
             z-index: 2; /* Ensure the button is above the looping gif */
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -79,6 +98,9 @@
 
     <!-- Side Looping GIF -->
     <img id="side-gif" src="cd.gif" alt="Side Looping GIF">
+
+    <!-- New Looping GIF next to Side GIF -->
+    <img id="new-gif" src="mpc3009.gif" alt="New Looping GIF">
 
     <!-- Audio button -->
     <button id="audio-button" onclick="playAudio()">Press Play</button>
