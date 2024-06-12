@@ -49,19 +49,20 @@
             z-index: 2;
         }
 
-        #model-container {
+        #header-container {
             position: fixed;
-            top: calc(20px + 200px);
+            top: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 300px;
-            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             z-index: 2;
         }
 
-        canvas {
-            width: 100%;
-            height: 100%;
+        #header-container img {
+            margin: 10px;
+            height: 100px; /* Adjust as needed */
         }
     </style>
 </head>
@@ -70,6 +71,12 @@
     <video id="background-video" autoplay loop muted playsinline>
         <source src="tokyogh.mp4" type="video/mp4">
     </video>
+
+    <!-- Header with PNG images -->
+    <div id="header-container">
+        <img src="coollogo_com-19492510.png" alt="Header Image 1">
+        <img src="coollogo_com-199792294.png" alt="Header Image 2">
+    </div>
 
     <!-- Looping GIF in the top-left corner -->
     <img id="looping-gif" src="9loop.gif" alt="Looping GIF">
@@ -80,13 +87,8 @@
     <!-- Side Looping GIF -->
     <img id="side-gif" src="cd.gif" alt="Side Looping GIF">
 
-    <!-- 3D Model Container -->
-    <div id="model-container"></div>
-
     <!-- Include the external player script -->
     <script src="https://cdn.jsdelivr.net/gh/ssebastianoo/web-player@main/player.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
     <script>
         const player = new WebPlayer({
             songs: [
@@ -101,61 +103,6 @@
             ],
         });
         player.setup();
-
-        // 3D Model Initialization
-        const container = document.getElementById('model-container');
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ alpha: true });
-        renderer.setSize(container.clientWidth, container.clientHeight);
-        container.appendChild(renderer.domElement);
-
-        // Add lighting to the scene
-        const ambientLight = new THREE.AmbientLight(0xffffff, 1); // Ambient light
-        scene.add(ambientLight);
-
-        const loader = new THREE.GLTFLoader();
-        loader.load('TakeOutBoxV2.gltf', function(gltf) {
-            const model = gltf.scene;
-            scene.add(model);
-            model.position.set(0, -1, 0);
-            model.scale.set(0.5, 0.5, 0.5);
-
-            console.log(model); // Log the model to check if it loads correctly
-
-            // Adding an event listener to play audio when the model is clicked
-            model.userData = { clickable: true };
-            container.addEventListener('click', function(event) {
-                const mouse = new THREE.Vector2();
-                mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-                mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-                
-                const raycaster = new THREE.Raycaster();
-                raycaster.setFromCamera(mouse, camera);
-                const intersects = raycaster.intersectObjects(scene.children, true);
-                
-                if (intersects.length > 0 && intersects[0].object.userData.clickable) {
-                    player.play();
-                }
-            });
-
-            animate();
-        }, undefined, function(error) {
-            console.error(error);
-        });
-
-        camera.position.z = 2;
-
-        function animate() {
-            requestAnimationFrame(animate);
-            renderer.render(scene, camera);
-        }
-
-        window.addEventListener('resize', function() {
-            camera.aspect = container.clientWidth / container.clientHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(container.clientWidth, container.clientHeight);
-        });
     </script>
 </body>
 </html>
