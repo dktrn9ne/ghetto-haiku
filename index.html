@@ -29,24 +29,36 @@
             z-index: 1;
         }
 
-        #center-gif {
+        .gif-container {
             position: fixed;
-            top: 50%;
-            left: 42%;
             transform: translate(-50%, -50%);
-            width: 300px;
-            height: 300px;
+            text-align: center;
             z-index: 2;
         }
 
-        #side-gif {
-            position: fixed;
+        #center-container {
+            top: 50%;
+            left: 42%;
+        }
+
+        #side-container {
             top: 50%;
             left: 58%;
-            transform: translate(-50%, -50%);
-            width: 450px;
-            height: 450px;
-            z-index: 2;
+        }
+
+        .gif-button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .gif-button:hover {
+            background-color: #0056b3;
         }
 
         #header-container {
@@ -81,11 +93,17 @@
     <!-- Looping GIF in the top-left corner -->
     <img id="looping-gif" src="9loop.gif" alt="Looping GIF">
 
-    <!-- Centered Looping GIF -->
-    <img id="center-gif" src="shirt.gif" alt="Center Looping GIF">
+    <!-- Centered Looping GIF with Button -->
+    <div id="center-container" class="gif-container">
+        <img id="center-gif" src="shirt.gif" alt="Center Looping GIF">
+        <button class="gif-button" onclick="location.href='https://link-to-merch.com'">Merch</button>
+    </div>
 
-    <!-- Side Looping GIF -->
-    <img id="side-gif" src="cd.gif" alt="Side Looping GIF">
+    <!-- Side Looping GIF with Button -->
+    <div id="side-container" class="gif-container">
+        <img id="side-gif" src="cd.gif" alt="Side Looping GIF">
+        <button class="gif-button" onclick="location.href='https://link-to-preorder.com'">Pre-order</button>
+    </div>
 
     <!-- Include the external player script -->
     <script src="https://cdn.jsdelivr.net/gh/ssebastianoo/web-player@main/player.js"></script>
