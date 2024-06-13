@@ -31,24 +31,24 @@
 
         .gif-container {
             position: fixed;
+            top: 50%;
+            width: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
             z-index: 2;
         }
 
         #center-container {
-            top: 50%;
             left: 42%;
         }
 
         #side-container {
-            top: 50%;
             left: 58%;
         }
 
         .gif-button {
-            display: block;
-            margin: 10px auto;
+            display: inline-block;
+            margin: 10px;
             padding: 10px 20px;
             background-color: #007BFF;
             color: white;
@@ -76,6 +76,16 @@
             margin: 10px;
             height: 100px; /* Adjust as needed */
         }
+
+        .button-container {
+            position: fixed;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            z-index: 2;
+        }
     </style>
 </head>
 <body>
@@ -93,15 +103,19 @@
     <!-- Looping GIF in the top-left corner -->
     <img id="looping-gif" src="9loop.gif" alt="Looping GIF">
 
-    <!-- Centered Looping GIF with Button -->
+    <!-- Centered Looping GIF -->
     <div id="center-container" class="gif-container">
         <img id="center-gif" src="shirt.gif" alt="Center Looping GIF">
-        <button class="gif-button" onclick="location.href='https://link-to-merch.com'">Merch</button>
     </div>
 
-    <!-- Side Looping GIF with Button -->
+    <!-- Side Looping GIF -->
     <div id="side-container" class="gif-container">
         <img id="side-gif" src="cd.gif" alt="Side Looping GIF">
+    </div>
+
+    <!-- Buttons Container -->
+    <div class="button-container">
+        <button class="gif-button" onclick="location.href='https://link-to-merch.com'">Merch</button>
         <button class="gif-button" onclick="location.href='https://link-to-preorder.com'">Pre-order</button>
     </div>
 
