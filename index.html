@@ -49,16 +49,7 @@
         .gif-button {
             display: inline-block;
             margin: 10px 80px; /* Increased margin to add more space between buttons */
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
             cursor: pointer;
-        }
-
-        .gif-button:hover {
-            background-color: #0056b3;
         }
 
         #header-container {
@@ -85,6 +76,10 @@
             display: flex;
             justify-content: center;
             z-index: 2;
+        }
+
+        .button-container a img {
+            height: 100px; /* Adjust the size as needed */
         }
     </style>
 </head>
@@ -115,8 +110,12 @@
 
     <!-- Buttons Container -->
     <div class="button-container">
-        <button class="gif-button" onclick="location.href='https://link-to-merch.com'">Merch</button>
-        <button class="gif-button" onclick="location.href='https://link-to-preorder.com'">Pre-order</button>
+        <a href="https://link-to-merch.com">
+            <img src="merch.png" alt="Merch Button" class="gif-button">
+        </a>
+        <a href="https://link-to-preorder.com">
+            <img src="preorder.png" alt="Pre-order Button" class="gif-button">
+        </a>
     </div>
 
     <!-- Include the external player script -->
