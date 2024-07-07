@@ -81,41 +81,64 @@
         .button-container a img {
             height: 200px; /* Doubled the height of the buttons */
         }
+
+        /* Add border styles */
+        #border-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-image: url('border.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 0; /* Ensure it stays below other content */
+        }
+
+        #content-container {
+            position: relative;
+            z-index: 1;
+            /* Adjust padding to fit inside the border */
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
-    <!-- Video background -->
-    <video id="background-video" autoplay loop muted playsinline>
-        <source src="tokyogh.mp4" type="video/mp4">
-    </video>
+    <div id="border-container">
+        <div id="content-container">
+            <!-- Video background -->
+            <video id="background-video" autoplay loop muted playsinline>
+                <source src="tokyogh.mp4" type="video/mp4">
+            </video>
 
-    <!-- Header with PNG images -->
-    <div id="header-container">
-        <img src="coollogo_com-19492510.png" alt="Header Image 1">
-        <img src="coollogo_com-199792294.png" alt="Header Image 2">
-    </div>
+            <!-- Header with PNG images -->
+            <div id="header-container">
+                <img src="coollogo_com-19492510.png" alt="Header Image 1">
+                <img src="coollogo_com-199792294.png" alt="Header Image 2">
+            </div>
 
-    <!-- Looping GIF in the top-left corner -->
-    <img id="looping-gif" src="9loop.gif" alt="Looping GIF">
+            <!-- Looping GIF in the top-left corner -->
+            <img id="looping-gif" src="9loop.gif" alt="Looping GIF">
 
-    <!-- Centered Looping GIF -->
-    <div id="center-container" class="gif-container">
-        <img id="center-gif" src="shirt.gif" alt="Center Looping GIF">
-    </div>
+            <!-- Centered Looping GIF -->
+            <div id="center-container" class="gif-container">
+                <img id="center-gif" src="shirt.gif" alt="Center Looping GIF">
+            </div>
 
-    <!-- Side Looping GIF -->
-    <div id="side-container" class="gif-container">
-        <img id="side-gif" src="cd.gif" alt="Side Looping GIF">
-    </div>
+            <!-- Side Looping GIF -->
+            <div id="side-container" class="gif-container">
+                <img id="side-gif" src="cd.gif" alt="Side Looping GIF">
+            </div>
 
-    <!-- Buttons Container -->
-    <div class="button-container">
-        <a href="https://link-to-merch.com">
-            <img src="merch.png" alt="Merch Button" class="gif-button">
-        </a>
-        <a href="https://link-to-preorder.com">
-            <img src="preorder.png" alt="Pre-order Button" class="gif-button">
-        </a>
+            <!-- Buttons Container -->
+            <div class="button-container">
+                <a href="https://link-to-merch.com">
+                    <img src="merch.png" alt="Merch Button" class="gif-button">
+                </a>
+                <a href="https://link-to-preorder.com">
+                    <img src="preorder.png" alt="Pre-order Button" class="gif-button">
+                </a>
+            </div>
+        </div>
     </div>
 
     <!-- Include the external player script -->
